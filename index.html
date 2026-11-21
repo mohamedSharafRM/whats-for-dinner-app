@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's For Dinner</title>
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!--? START HEADER SECTION -->
+    <header class="bg-white shadow-3" id="header">
+        <nav class="navbar navbar-expand-md bg-body-tertiary py-3">
+            <div class="container-xl">
+                <div class="d-flex align-items-center gap-2-half">
+                    <div class="icon-holder logo d-flex justify-content-center align-items-center rounded-pill">
+                        <i class="fa-solid fa-utensils text-white"></i>
+                    </div>
+
+                    <div>
+                        <h1 class="fs-4 mb-0 fw-bold">What's For Dinner</h1>
+                        <p class="fs-7 mb-0 text-gray">Your daily meal inspiration</p>
+                    </div>
+                </div>
+
+                <div class="links d-flex gap-4">
+                    <button class="unstyled-btn fs-5">
+                        <i class="fa-solid fa-bookmark"></i>
+                        <span></span>
+                    </button>
+
+                    <button class="unstyled-btn fs-5">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span></span>
+                    </button>
+
+                    <button class="unstyled-btn fs-5">
+                        <i class="fa-solid fa-gear"></i>
+                    </button>
+
+                    <div class="profile-avatar border border-2 rounded-circle overflow-hidden">
+                        <img src="./images/Profile-Avatar.jpg" class="w-100 h-100" alt="alt="Profile Avatar"">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--? END   HEADER SECTION -->
+
+    <!--? START RECIPE SECTION -->
+    <main class="py-4">
+        <section id="recpie">
+                <div class="container-xl h-100">
+                    <div class="row bg-white rounded-5 h-100 overflow-hidden">
+                        <div class="col-12 col-lg-5 h-100">
+                            <div class="recipe-image position-relative">
+                                <img id="imgSrc" class="w-100 h-100 object-fit-cover overflow-hidden recipe-image" alt="chicken-tikka-masala">
+                            
+                                <div class="rating-and-reviews bg-white d-flex align-items-center gap-2 p-3 position-absolute rounded-4 shadow-2" >
+                                    <i class="fa-solid fa-star fs-6 star-color"></i>
+                                    <span id="rating" class="fw-semibold fs-6"></span>
+                                    <span class="fs-7 text-gray">(<span id="reviews"></span> reviews)</span>
+                                </div>
+
+                                <div class="prep-cook-time-servings-count bg-white d-flex align-items-center gap-5 p-4 position-absolute  rounded-4 justify-content-between">
+                                    <div class="d-flex flex-column align-items-center">
+                                        <i class="fa-solid fa-clock fs-4"></i>
+                                        <span class="fs-7 text-gray">Prep Time</span>
+                                        <span class="fs-6 fw-bold"><span id="prepTime"></span> mins</span>
+                                    </div>
+
+                                    <div class="d-flex flex-column">
+                                        <i class="fa-solid fa-fire-burner fs-4"></i>
+                                        <span class="fs-7 text-gray">Cook Time</span>
+                                        <span class="fs-6 fw-bold"><span id="cookTime"></span> mins</span>
+                                    </div>
+
+                                    <div class="d-flex flex-column">
+                                        <i class="fa-solid fa-users fs-4"></i>
+                                        <span class="fs-7 text-gray">Servings</span>
+                                        <span class="fs-6 fw-bold"><span id="servings"></span> people</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-12 col-lg-7">
+                            <div class="recipe-specification p-4 h-100 overflow-y-auto">
+
+                                <div class="recipe-full d-flex align-items-center justify-content-between gap-3">
+                                    <div class="recipe-desc">
+                                        <div class="difcullty-region mb-3">
+                                            <span id="difficulty" class="difcullty-badge rounded-pill fw-semibold">Medium</span>
+                                            <span id="region" class="region-badge rounded-pill fw-semibold">Indian</span>
+                                        </div>
+                                        <h3 id="name" class="fs-2 fw-bold mb-2"></h3>
+                                        <p id="desc" class="text-body-secondary fs-6"></p>
+                                    </div>
+                                    <div class="links d-flex gap-2-half">
+                                        <button class="unstyled-btn rounded-3-half">
+                                            <i class="fa-solid fa-bookmark"></i>
+                                        </button>
+
+                                        <button class="unstyled-btn rounded-3-half">
+                                            <i class="fa-solid fa-share-nodes"></i>
+                                        </button>
+                                    </div>
+                                    
+                                </div>
+
+                                <div id="time-warning" class="alert alert-danger d-flex gap-2-half d-none" role="alert">
+                                    <div class="alert-icon d-flex justify-content-center align-items-center">
+                                        <i class="fa-solid fa-triangle-exclamation fs-5"></i>
+                                    </div> 
+                                    <div>
+                                        <h4 class="fw-semibold fs-6 m-0">
+                                            Extended Preparation Time
+                                        </h4>
+                                        <p class="fs-7 fw-normal m-0">
+                                            This recipe requires more than 45 minutes to prepare. Plan accordingly!
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="tabs-container">
+                                    <ul class="nav nav-tabs nav-underline gap-0 p-2 mb-4" id="myTab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="ingredients-tab" data-bs-toggle="tab" data-bs-target="#ingredients-tab-pane" type="button" role="tab" aria-controls="ingredients-tab-pane" aria-selected="true">
+                                                <i class="fa-solid fa-list-check me-1"></i>
+                                                Ingredients
+                                            </button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="instructions-tab" data-bs-toggle="tab" data-bs-target="#instructions-tab-pane" type="button" role="tab" aria-controls="instructions-tab-pane" aria-selected="false">
+                                                <i class="fa-solid fa-book-open me-1"></i>                                                
+                                                Instructions
+                                            </button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="nutrition-tab" data-bs-toggle="tab" data-bs-target="#nutrition-tab-pane" type="button" role="tab" aria-controls="nutrition-tab-pane" aria-selected="false">
+                                                <i class="fa-solid fa-chart-pie me-1"></i>                                                
+                                                Nutrition
+                                            </button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="chef-tips-tab" data-bs-toggle="tab" data-bs-target="#chef-tips-tab-pane" type="button" role="tab" aria-controls="chef-tips-tab-pane" aria-selected="false">
+                                                <i class="fa-solid fa-lightbulb me-1"></i>                                                
+                                                Chef's tips
+                                            </button>
+                                        </li>
+                                        
+                                        </ul>
+                                        <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane show active" id="ingredients-tab-pane" role="tabpanel" aria-labelledby="ingredients-tab" tabindex="0">
+                                           <div class="ingredients-container rounded-4 p-4 overflow-y-auto">
+                                            <ul id="ingredients" class="m-0 p-0 d-flex flex-column row-gap-3 ">
+                                                <!-- <li class="d-flex align-items-center gap-2-half">
+                                                    <div class="number-holder d-flex justify-content-center align-items-center text-white rounded-circle fw-bold">
+                                                        1
+                                                    </div>
+                                                    <p class="mb-0">600g chicken breast, cubed</p>
+                                                </li>
+
+                                                <li class="d-flex align-items-center gap-2-half">
+                                                    <div class="number-holder d-flex justify-content-center align-items-center text-white rounded-circle fw-bold">
+                                                        2
+                                                    </div>
+                                                    <p class="mb-0">1 cup plain yogurt</p>
+                                                </li>
+
+                                                <li class="d-flex align-items-center gap-2-half">
+                                                    <div class="number-holder d-flex justify-content-center align-items-center text-white rounded-circle fw-bold">
+                                                        3
+                                                    </div>
+                                                    <p class="mb-0">2 tbsp Tikka Masala paste</p>
+                                                </li>
+
+                                                <li class="d-flex align-items-center gap-2-half">
+                                                    <div class="number-holder d-flex justify-content-center align-items-center text-white rounded-circle fw-bold">
+                                                        4
+                                                    </div>
+                                                    <p class="mb-0">
+                                                        1 tbsp ginger-garlic paste
+                                                    </p>
+                                                </li>
+
+                                                <li class="d-flex align-items-center gap-2-half">
+                                                    <div class="number-holder d-flex justify-content-center align-items-center text-white rounded-circle fw-bold">
+                                                        5
+                                                    </div>
+                                                    <p class="mb-0">1 tbsp vegetable oil</p>
+                                                </li>
+
+                                                <li class="d-flex align-items-center gap-2-half">
+                                                    <div class="number-holder d-flex justify-content-center align-items-center text-white rounded-circle fw-bold">
+                                                        6
+                                                    </div>
+                                                    <p class="mb-0">1 onion, chopped</p>
+                                                </li>
+
+                                                <li class="d-flex align-items-center gap-2-half">
+                                                    <div class="number-holder d-flex justify-content-center align-items-center text-white rounded-circle fw-bold">
+                                                        7
+                                                    </div>
+                                                    <p class="mb-0">1 can (400ml) crushed tomatoes</p>
+                                                </li>
+
+                                                <li class="d-flex align-items-center gap-2-half">
+                                                    <div class="number-holder d-flex justify-content-center align-items-center text-white rounded-circle fw-bold">
+                                                        8
+                                                    </div>
+                                                    <p class="mb-0">1/2 cup heavy cream</p>
+                                                </li>
+
+                                                <li class="d-flex align-items-center gap-2-half">
+                                                    <div class="number-holder d-flex justify-content-center align-items-center text-white rounded-circle fw-bold">
+                                                        9
+                                                    </div>
+                                                    <p class="mb-0">Fresh cilantro for garnish</p>
+                                                </li> -->
+                                                
+                                            </ul>
+                                           </div>
+                                        </div>
+                                        <div class="tab-pane" id="instructions-tab-pane" role="tabpanel" aria-labelledby="instructions-tab" tabindex="0">
+                                            <div class="instructions-container p-0 overflow-y-auto">
+                                                <ul id="instructions" class="m-0 p-0 d-flex flex-column row-gap-3">
+                                                <!-- <li class="d-flex align-items-center gap-2-half">
+                                                    <div class="number-holder d-flex justify-content-center align-items-center text-white rounded-4 fw-bold fs-5">
+                                                        1
+                                                    </div>
+                                                    <p class="mb-0">Marinate chicken cubes with yogurt, Tikka Masala paste, and ginger-garlic paste for at least 30 minutes.</p>
+                                                </li>
+
+                                                <li class="d-flex align-items-center gap-2-half">
+                                                    <div class="number-holder d-flex justify-content-center align-items-center text-white rounded-4 fw-bold fs-5">
+                                                        2
+                                                    </div>
+                                                    <p class="mb-0">In a pan, heat oil and sauté chopped onion until translucent.</p>
+                                                </li>
+
+                                                <li class="d-flex align-items-center gap-2-half">
+                                                    <div class="number-holder d-flex justify-content-center align-items-center text-white rounded-4 fw-bold fs-5">
+                                                        3
+                                                    </div>
+                                                    <p class="mb-0">Add marinated chicken and cook until browned.</p>
+                                                </li>
+
+                                                <li class="d-flex align-items-center gap-2-half">
+                                                    <div class="number-holder d-flex justify-content-center align-items-center text-white rounded-4 fw-bold fs-5">
+                                                        4
+                                                    </div>
+                                                    <p class="mb-0">
+                                                        Pour in crushed tomatoes, bring to a simmer, and cook for 15-20 minutes until chicken is cooked through.
+                                                    </p>
+                                                </li>
+
+                                                <li class="d-flex align-items-center gap-2-half">
+                                                    <div class="number-holder d-flex justify-content-center align-items-center text-white rounded-4 fw-bold fs-5">
+                                                        5
+                                                    </div>
+                                                    <p class="mb-0">Stir in heavy cream and heat through (do not boil).</p>
+                                                </li>
+
+                                                <li class="d-flex align-items-center gap-2-half">
+                                                    <div class="number-holder d-flex justify-content-center align-items-center text-white rounded-4 fw-bold fs-5">
+                                                        6
+                                                    </div>
+                                                    <p class="mb-0">Garnish with fresh cilantro and serve hot with rice or naan.</p>
+                                                </li> -->
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="nutrition-tab-pane" role="tabpanel" aria-labelledby="nutrition-tab" tabindex="0">
+                                            <div class="nutrition">
+                                                <div class="row">
+                                                    <!-- Calories  -->
+                                                    <div class="col-12 col-md-6 py-3">
+                                                        <div class="nutration-element d-flex justify-content-between align-items-center p-3 rounded-3-half">
+                                                            <div class="d-flex align-items-center gap-2-half">
+                                                                <div class="nutrition-holder calories-holder d-flex justify-content-center align-items-center p-3 rounded-3">
+                                                                    <i class="fa-solid fa-fire"></i>
+                                                                </div>
+                                                                <span class="fw-medium fs-6">Calories</span>
+                                                            </div>
+                                                            <span class="fw-bold fs-5">
+                                                                <span id="calories"></span>kcal
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Protein  -->
+                                                    <div class="col-12 col-md-6 py-3">
+                                                        <div class="nutration-element d-flex justify-content-between align-items-center p-3 rounded-3-half">
+                                                            <div class="d-flex align-items-center gap-2-half">
+                                                                <div class="nutrition-holder protein-holder d-flex justify-content-center align-items-center p-3 rounded-3">
+                                                                    <i class="fa-solid fa-dumbbell"></i>
+                                                                </div>
+                                                                <span class="fw-medium fs-6">Protein</span>
+                                                            </div>
+                                                            <span class="fw-bold fs-5">
+                                                                <span id="protien"></span>g
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Carbohydrates  -->
+                                                    <div class="col-12 col-md-6 py-3">
+                                                        <div class="nutration-element d-flex justify-content-between align-items-center p-3 rounded-3-half">
+                                                            <div class="d-flex align-items-center gap-2-half">
+                                                                <div class="nutrition-holder carbohydrates-holder d-flex justify-content-center align-items-center p-3 rounded-3">
+                                                                    <i class="fa-solid fa-wheat-awn"></i>
+                                                                </div>
+                                                                <span class="fw-medium fs-6">Carbohydrates</span>
+                                                            </div>
+                                                            <span class="fw-bold fs-5">
+                                                                <span id="carb"></span>g
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Fat  -->
+                                                    <div class="col-12 col-md-6 py-3">
+                                                        <div class="nutration-element d-flex justify-content-between align-items-center p-3 rounded-3-half">
+                                                            <div class="d-flex align-items-center gap-2-half">
+                                                                <div class="nutrition-holder fat-holder d-flex justify-content-center align-items-center p-3 rounded-3">
+                                                                    <i class="fa-solid fa-droplet"></i>
+                                                                </div>
+                                                                <span class="fw-medium fs-6">Fat</span>
+                                                            </div>
+                                                            <span class="fw-bold fs-5">
+                                                                <span id="fat"></span>g
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Fiber  -->
+                                                    <div class="col-12 col-md-6 py-3">
+                                                        <div class="nutration-element d-flex justify-content-between align-items-center p-3 rounded-3-half">
+                                                            <div class="d-flex align-items-center gap-2-half">
+                                                                <div class="nutrition-holder fiber-holder d-flex justify-content-center align-items-center p-3 rounded-3">
+                                                                    <i class="fa-solid fa-seedling"></i>
+                                                                </div>
+                                                                <span class="fw-medium fs-6">Fiber</span>
+                                                            </div>
+                                                            <span class="fw-bold fs-5">
+                                                                <span id="fiber"></span>g
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Sodi  -->
+                                                    <div class="col-12 col-md-6 py-3">
+                                                        <div class="nutration-element d-flex justify-content-between align-items-center p-3 rounded-3-half">
+                                                            <div class="d-flex align-items-center gap-2-half">
+                                                                <div class="nutrition-holder sodium-holder d-flex justify-content-center align-items-center p-3 rounded-3">
+                                                                    <i class="fa-solid fa-cube"></i>
+                                                                </div>
+                                                                <span class="fw-medium fs-6">Sodium</span>
+                                                            </div>
+                                                            <span class="fw-bold fs-5">
+                                                                <span id="sodium"></span>mg
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="chef-tips-tab-pane" role="tabpanel" aria-labelledby="chef-tips-tab" tabindex="0">
+                                          <ul id="chefTips" class="tips-list p-0">
+                                            <!-- <li class="alert alert-warning d-flex align-items-center gap-2-half">
+                                                <div class="alert-warning-icon">
+                                                    <i class="fa-solid fa-circle-check fs-5"></i>
+                                                </div>
+                                                <p class="mb-0 fs-6">For best results, marinate the chicken overnight.</p>
+                                            </li> -->
+
+                                            <!-- <div class="tips-list"> -->
+                                            <!-- <li class="alert alert-warning d-flex align-items-center gap-2-half">
+                                                <div class="alert-warning-icon">
+                                                    <i class="fa-solid fa-circle-check fs-5"></i>
+                                                </div>
+                                                <p class="mb-0 fs-6">Don't skip the heavy cream—it gives the sauce its signature richness.</p>
+                                            </li> -->
+
+                                            <!-- <div class="tips-list"> -->
+                                            <!-- <li class="alert alert-warning d-flex align-items-center gap-2-half">
+                                                <div class="alert-warning-icon">
+                                                    <i class="fa-solid fa-circle-check fs-5"></i>
+                                                </div>
+                                                <p class="mb-0 fs-6">Use full-fat plain yogurt for the marinade.</p>
+                                            </li> -->
+                                          <!-- </div>   -->
+                                        <!-- </div> -->
+                                        </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                                <div class="try-another pt-4">
+                                <button id="try-another-btn" 
+                                    class=" btn d-flex justify-content-center align-items-center text-white shadow-2 fw-semibold"
+                                    onclick="generateRandom()">
+                                    <i class="fa-solid fa-rotate">
+                                    </i>
+                                    Try Another Recipe
+                                </button>
+                            </div>
+                            </div>
+
+                            
+
+                        </div> 
+                    
+
+                    
+        </section>
+    </main>
+    <!--? END   RECIPE SECTION -->
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

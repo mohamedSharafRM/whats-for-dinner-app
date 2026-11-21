@@ -1,0 +1,332 @@
+.gap-2-half{
+    gap: 0.75rem !important;
+}
+
+.rounded-3-half{
+    border-radius: 0.75rem !important;
+}
+
+
+.fs-7{
+    font-size: 0.875rem !important;
+}
+
+.star-color{
+    color: #fdc700;
+}
+
+.text-gray{
+    color: #6a7282 !important;
+}
+.shadow-2{
+    box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -4px #0000001a;
+}
+
+.unstyled-btn{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    outline: none;
+}
+
+
+
+
+body{
+    background-image: linear-gradient(to right , #fff7ed, #fffbeb, #fefce8);
+}
+.logo{
+    width: 3rem;
+    height: 3rem;
+    background-image: linear-gradient(to right , #ff6900, #fb2c36);
+}
+
+#header .profile-avatar{
+    width: 2.5rem;
+    height: 2.5rem;
+    --bs-border-color : #ffb86a;
+}
+
+#header .links button{
+    color : #4a5565;
+    transition: all 0.4s;
+}
+
+#header .links button:hover{
+    color: #f54a00;
+}
+
+
+
+
+#recpie .recipe-image{
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    width: 100%;
+    height: 400px;
+}
+
+#recpie .rating-and-reviews{
+    top: 12px;
+    left: 12px;
+}
+
+#recpie .prep-cook-time-servings-count{
+    bottom: 12px;
+    left: 12px;
+    width: 95%;
+}
+
+#recpie .prep-cook-time-servings-count .fa-clock{
+    color: #ff6900;
+}
+
+#recpie .prep-cook-time-servings-count .fa-fire-burner{
+    color: #fb2c36;
+}
+
+#recpie .prep-cook-time-servings-count .fa-users{
+    color: #2b7fff;
+}
+
+
+
+
+
+#recpie  .recipe-specification .recipe-full .recipe-desc .difcullty-region span{
+    padding: 4px 12px;
+    font-size: 12px;
+}
+
+#recpie .recipe-specification .recipe-full  .recipe-desc .difcullty-region .difcullty-badge{
+    color: #008236;
+    background-color: #dcfce7;
+    margin-right: 12px;
+}
+
+#recpie .recipe-specification .recipe-full .recipe-desc  .difcullty-region .region-badge{
+    color: #1447e6;
+    background-color: #dbeafe;
+}
+
+#recpie .recipe-specification .links button{
+    width: 3rem;
+    height: 3rem;
+    color: #f54a00;
+    background-color: #ffedd4;
+    transition: all 0.4s;
+}
+
+#recpie .recipe-specification .links button:hover{
+    background-color: #ffd7a8;
+}
+
+#recpie .recipe-specification #time-warning{
+    --bs-alert-color: #e7000b;
+    --bs-alert-bg: #fef2f2;
+    border: 0;
+    border-inline-start: 4px solid #fb2c36;
+}
+
+
+#recpie .tabs-container .nav-underline{
+    --bs-nav-underline-link-active-color : #F88655;
+}
+
+#recpie .tabs-container .nav{
+    --bs-nav-link-color: #6a7282;
+    --bs-link-hover-color : #364153;
+    justify-content: space-between;
+}
+
+#recpie .tabs-container .nav-tabs{
+    --bs-border-color : #ebe6e7;
+}
+
+#recpie .tabs-container .nav-tabs .nav-link{
+    border: 0;
+    --bs-nav-tabs-border-radius : 0;
+}
+
+#recpie .overflow-y-auto {
+    scrollbar-width: thin;
+    scrollbar-color: #fe886a4d transparent;
+}
+
+
+#recpie .ingredients-container {
+    height: 400px;
+}
+
+#recpie .ingredients-container{
+    background-image: linear-gradient(to right , #fff7ed, #fffbeb);
+}
+
+#recpie .ingredients-container .number-holder{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #ff6900;
+    font-size: 12px;
+}
+
+#recpie .instructions-container {
+    height: 350px;
+}
+
+#recpie .ingredients-container p,
+#recpie .instructions-container p{
+    color: #364153;
+}
+
+#recpie .instructions-container .number-holder{
+    width: 3rem;
+    height: 3rem;
+    background-color: #ff6900;
+    font-size: 12px;
+}
+
+#recpie .tips-list .alert-warning{
+    --bs-alert-bg: #fffbeb;
+    border: 0;
+    border-inline-start: 4px solid #ffb900;
+}
+
+#recpie .tips-list .alert-warning .alert-warning-icon{
+    color: #e17100; 
+}
+
+#recpie .tips-list .alert-warning p{
+    color: #364153; 
+}
+
+
+
+#recpie .nutrition .nutration-element{
+    background-color: #fbf9fa;
+}
+
+#recpie .nutrition .nutrition-holder{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+#recpie .nutrition .calories-holder{
+    color: #f54a00;
+    background-color: #ffedd4;
+}
+
+#recpie .nutrition .protein-holder{
+    color: #155dfc;
+    background-color: #dbeafe;
+}
+
+#recpie .nutrition .carbohydrates-holder{
+    color: #d08700;
+    background-color: #fef9c2;
+}
+
+#recpie .nutrition .fat-holder{
+    color: #e7000b;
+    background-color: #ffe2e2;
+}
+
+#recpie .nutrition .fiber-holder{
+    color: #00a63e;
+    background-color: #dcfce7;
+}
+
+#recpie .nutrition .sodium-holder{
+        color: #e60076;
+    background-color: #fce7f3;
+}
+
+#recpie .try-another{
+    border-top: 1px solid #ebe6e7;
+    margin-top: 2rem;
+}
+
+#recpie .try-another button{
+    background-image: linear-gradient(to right, #ff6900, #fb2c36);
+    padding: 12px 24px;
+    transition: all 0.15s;
+}
+
+#recpie .try-another button:hover{
+    box-shadow: 0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a !important;
+    background-image: linear-gradient(to right, #f54a00, #e7000b);
+    scale: 1.05;
+}
+
+
+
+/* Recipe Card */
+@media (min-width: 992px) {
+    #recpie {
+        height: 750px;
+    }
+
+    #recpie > .container-xl,
+    #recpie > .container-xl > .row {
+        height: 100%;
+    }
+
+    #recpie > .container-xl > .row > .col-lg-5 {
+        height: 100%;
+    }
+
+    #recpie .recipe-image {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    #recpie .recipe-image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-top-left-radius: 1.5rem;
+        border-bottom-left-radius: 1.5rem;
+    }
+
+    #recpie .recipe-specification {
+        height: 100%;
+        max-height: 750px;
+        overflow-y: auto;
+    }
+    
+}
+
+@media (max-width: 991.98px) {
+    #recpie .recipe-image img {
+        display: block;
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    #recpie .recipe-specification {
+        max-height: none;
+        overflow-y: visible;
+    }
+}
+
+
+#recpie .recipe-specification::-webkit-scrollbar {
+    width: 6px;
+}
+
+#recpie .recipe-specification::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#recpie .recipe-specification::-webkit-scrollbar-thumb {
+    background-color: #fe886a4d;
+    border-radius: 10px;
+}
+
+#recpie .recipe-specification::-webkit-scrollbar-thumb:hover {
+    background-color: #ff6900;
+}
